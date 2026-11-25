@@ -1,0 +1,16 @@
+{
+  "name": "HealthVault — Personal Health Intelligence",
+  "short_name": "HealthVault",
+  "description": "Privacy-first personal health intelligence & medication management platform. wHACKiest 2026.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#064E3B",
+  "icons": [
+    {
+      "src": "/shield-plus.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
