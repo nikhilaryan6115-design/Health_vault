@@ -17,6 +17,7 @@ import { computeStockAnalysis } from '../utils/stockEngine';
 import { computeAdherenceAndInsights } from '../utils/insightsEngine';
 import { NavItemKey } from '../components/Sidebar';
 import { VitalityGraphic } from '../components/VitalityGraphic';
+import { RotatingLogo } from '../components/RotatingLogo';
 import { fireDoseConfetti } from '../utils/confetti';
 
 interface OverviewViewProps {
@@ -113,6 +114,8 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
               {greeting}, {userName}
             </h1>
+            {/* Subtle rotating logo as motion graphic */}
+            <RotatingLogo className="mt-2 mx-auto" />
             <p className="text-emerald-100/90 text-xs sm:text-sm font-normal leading-relaxed max-w-xl">
               Your personal medication routine and inventory forecast are synchronized in local storage.
             </p>
@@ -144,6 +147,8 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
 
         {/* Ambient background illumination */}
         <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-radial from-emerald-500/10 to-transparent pointer-events-none" />
+        {/* Subtle radar ping overlay */}
+        <div className="absolute inset-0 bg-emerald-500/5 animate-radar-ping pointer-events-none" />
       </div>
 
       {/* 4 Summary Cards with Staggered Hover Lifts */}
@@ -195,9 +200,8 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
         >
           <div className="flex items-center justify-between text-charcoal-500 mb-3">
             <span className="text-xs font-semibold uppercase tracking-wider">Inventory Health</span>
-            <div className={`w-9 h-9 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
-              lowStockCount > 0 ? 'bg-amber-50 text-amber-800' : 'bg-emerald-50 text-emerald-800'
-            }`}>
+            <div className={`w-9 h-9 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${lowStockCount > 0 ? 'bg-amber-50 text-amber-800' : 'bg-emerald-50 text-emerald-800'
+              }`}>
               <Package className="w-5 h-5" />
             </div>
           </div>
@@ -403,9 +407,8 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
               >
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-charcoal-900">Caregiver Escalation</span>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                    caregiver?.escalationEnabled ? 'bg-emerald-100 text-emerald-800' : 'bg-charcoal-200 text-charcoal-700'
-                  }`}>
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${caregiver?.escalationEnabled ? 'bg-emerald-100 text-emerald-800' : 'bg-charcoal-200 text-charcoal-700'
+                    }`}>
                     {caregiver?.escalationEnabled ? 'Consent Active' : 'Consent Inactive'}
                   </span>
                 </div>

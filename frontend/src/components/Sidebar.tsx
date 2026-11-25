@@ -11,6 +11,7 @@ import {
   Settings,
   X
 } from 'lucide-react';
+import { RotatingLogo } from '../components/RotatingLogo';
 
 export type NavItemKey =
   | 'overview'
@@ -69,6 +70,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-800 flex items-center justify-center text-white shadow-sm">
               <ShieldCheck className="w-6 h-6 text-emerald-200" />
+            <RotatingLogo className="ml-2 w-8 h-8" />
             </div>
             <div>
               <span className="font-bold text-lg text-charcoal-900 tracking-tight">HealthVault</span>
